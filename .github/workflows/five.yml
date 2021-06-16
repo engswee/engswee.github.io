@@ -1,0 +1,14 @@
+name: Do things every 5 minutes
+
+on:
+  schedule:
+  - cron: "*/5 * * * *"
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: ls "$GITHUB_WORKSPACE/.github/workflows/five.yml"
