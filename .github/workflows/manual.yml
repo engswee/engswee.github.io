@@ -20,7 +20,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: engswee/flashpipe:2.1.0-lite
+      image: engswee/cpi-cicd:2.1.0-lite
+      credentials:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     steps:
     - uses: actions/checkout@v2
 #       with:
