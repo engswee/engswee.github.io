@@ -10,11 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: engswee/cpi-cicd:2.1.0-lite
-      credentials:
-        username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+#     container:
+#       image: engswee/cpi-cicd:2.1.0-lite
+#       credentials:
+#         username: ${{ secrets.DOCKER_USER }}
+#         password: ${{ secrets.DOCKER_PASSWORD }}
     steps:
     - uses: actions/checkout@v2
 #       with:
@@ -31,7 +31,7 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add --all --verbose
-        git diff-index --quiet HEAD || git commit -m "Add changes" -a --verbose
+        git diff-index HEAD || git commit -m "Add changes" -a --verbose
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
